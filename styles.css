@@ -1,0 +1,2252 @@
+:root {
+            --primary-green: #2e7d32;
+            --primary-green-dark: #1b5e20;
+            --primary-green-50: #e8f5e9;
+            --primary-green-25: #f1f8e9;
+            --secondary-blue: #1976d2;
+            --warning-orange: #f57c00;
+            --danger-red: #d32f2f;
+            --earth-brown: #5d4037;
+            --purple: #9c27b0;
+            --pink: #e91e63;
+            --deep-purple: #7b1fa2;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 5px solid var(--warning-orange);
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .app-container {
+            display: flex;
+            min-height: 900px;
+        }
+        
+        .sidebar {
+            width: 450px;
+            background: var(--primary-green-25);
+            border-left: 3px solid var(--primary-green);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .section {
+            margin-bottom: 2.5rem;
+            background: white;
+            border-radius: var(--radius-md);
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #4CAF50, #388E3C);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-green-dark);
+        }
+        
+        .section-header i {
+            margin-left: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .section-content {
+            padding: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-green-dark);
+            font-size: 1.05rem;
+        }
+        
+        .form-group label i {
+            margin-left: 0.5rem;
+            color: var(--secondary-blue);
+        }
+        
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        select:focus, input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+        }
+        
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.75rem;
+            max-height: 350px;
+            min-height: 150px;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: var(--radius-md);
+            border: 1px solid #eee;
+            position: relative;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-green) #f1f1f1;
+        }
+        
+        .checkbox-grid::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        .checkbox-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+        
+        .checkbox-grid::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 5px;
+        }
+        
+        .checkbox-grid::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green-dark);
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s;
+        }
+        
+        .checkbox-item:hover {
+            border-color: var(--primary-green);
+            background: var(--primary-green-25);
+        }
+        
+        .checkbox-item input {
+            width: auto;
+            margin-left: 0.75rem;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-item label {
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 0;
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.9rem;
+        }
+        
+        .weed-group-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: var(--radius-md);
+            border: 2px solid #e0e0e0;
+        }
+        
+        .weed-group-section h3 {
+            color: var(--primary-green-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-green);
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, var(--primary-green-dark), #0d4720);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn i {
+            margin-left: 0.5rem;
+        }
+        
+        .result-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .result-header {
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            color: white;
+            padding: 1.2rem;
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .result-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .result-content {
+            padding: 1.5rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .status-recommendation {
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+            color: var(--primary-green-dark);
+            border: 2px solid #81c784;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .result-card.recommended {
+            border-color: var(--primary-green);
+        }
+        
+        .result-card.rejected {
+            border-color: var(--danger-red);
+        }
+        
+        .result-card.warnings {
+            border-color: var(--warning-orange);
+        }
+        
+        .result-card.rotation {
+            border-color: var(--purple);
+        }
+        
+        .result-card-header {
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .result-card.recommended .result-card-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+        }
+        
+        .result-card.rejected .result-card-header {
+            background: linear-gradient(135deg, #d32f2f, #b71c1c);
+        }
+        
+        .result-card.warnings .result-card-header {
+            background: linear-gradient(135deg, #f57c00, #e65100);
+        }
+        
+        .result-card.rotation .result-card-header {
+            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+        }
+        
+        .result-card-body {
+            padding: 1.2rem;
+        }
+        
+        .herbicide-item {
+            background: #f8f9fa;
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-right: 4px solid var(--primary-green);
+        }
+        
+        .herbicide-item.rejected {
+            border-right-color: var(--danger-red);
+            background: #fff5f5;
+        }
+        
+        .herbicide-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-green-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .herbicide-name.rejected {
+            color: var(--danger-red);
+        }
+        
+        .herbicide-details {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .herbicide-details p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .resistance-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resistance-very-low {
+            background: #e8f5e9;
+            color: var(--primary-green-dark);
+            border: 1px solid #81c784;
+        }
+        
+        .resistance-low {
+            background: #e8f5e9;
+            color: var(--primary-green-dark);
+            border: 1px solid #81c784;
+        }
+        
+        .resistance-medium {
+            background: #fff3e0;
+            color: #ef6c00;
+            border: 1px solid #ffb74d;
+        }
+        
+        .resistance-high {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #ef9a9a;
+        }
+        
+        .resistance-very-high {
+            background: #fce4ec;
+            color: #ad1457;
+            border: 1px solid #f48fb1;
+        }
+        
+        .rotation-plan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .rotation-year {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid #e0e0e0;
+            overflow: hidden;
+        }
+        
+        .rotation-year-header {
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .rotation-year-content {
+            padding: 1rem;
+        }
+        
+        .rotation-herbicide {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid;
+        }
+        
+        .alert {
+            padding: 1.2rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            border: 2px solid;
+        }
+        
+        .alert-warning {
+            background: linear-gradient(135deg, #FFF9C4, #FFECB3);
+            border-color: var(--warning-orange);
+            color: var(--earth-brown);
+        }
+        
+        .alert-info {
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+        }
+        
+        .alert-success {
+            background: linear-gradient(135deg, #E8F5E8, #C8E6C9);
+            border-color: var(--primary-green);
+            color: var(--primary-green-dark);
+        }
+        
+        .alert-danger {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            border-color: #f44336;
+            color: #c62828;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .tab.active {
+            color: var(--primary-green);
+            border-bottom-color: var(--primary-green);
+            background: var(--primary-green-25);
+        }
+        
+        .tab:hover {
+            background: var(--primary-green-25);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .efficiency-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .efficiency-table th {
+            background: var(--primary-green);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .efficiency-table td {
+            padding: 0.4rem;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.8rem;
+            min-width: 40px;
+        }
+        
+        .control-excellent {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+            font-weight: bold;
+        }
+        
+        .control-good {
+            background: #fff9c4;
+            color: #f57c00;
+        }
+        
+        .control-poor {
+            background: #ffccbc;
+            color: #d84315;
+        }
+        
+        .control-none {
+            background: #f5f5f5;
+            color: #757575;
+        }
+        
+        .control-unknown {
+            background: #e0e0e0;
+            color: #616161;
+        }
+        
+        .weed-count {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+        
+        .search-box {
+            margin-bottom: 1rem;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+        }
+        
+        .efficiency-details {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            border: 1px solid #e0e0e0;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        
+        .efficiency-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 0.85rem;
+        }
+        
+        .efficiency-item:last-child {
+            border-bottom: none;
+        }
+        
+        .efficiency-level {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .efficiency-excellent {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+        }
+        
+        .efficiency-good {
+            background: #fff9c4;
+            color: #f57c00;
+        }
+        
+        .efficiency-poor {
+            background: #ffccbc;
+            color: #d84315;
+        }
+        
+        .efficiency-none {
+            background: #f5f5f5;
+            color: #757575;
+        }
+        
+        .mixture-recommendation {
+            padding: 1rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--secondary-blue);
+        }
+        
+        .mixture-item {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--secondary-blue);
+        }
+        
+        .calculator {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--primary-green);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .calculator-input {
+            margin-bottom: 1rem;
+        }
+        
+        .calculator-unit {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .calculator-unit input {
+            flex: 1;
+        }
+        
+        .calculator-unit span {
+            padding: 0.75rem 1rem;
+            background: var(--primary-green-50);
+            border-radius: var(--radius-md);
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .calculator-button {
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-green-dark));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .calculator-result {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: var(--radius-md);
+            border: 2px solid #e0e0e0;
+            display: none;
+        }
+        
+        .result-item {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-left: none;
+                border-bottom: 3px solid var(--primary-green);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-container {
+                flex-direction: column;
+            }
+            
+            .tab {
+                border-bottom: none;
+                border-right: 3px solid transparent;
+            }
+            
+            .tab.active {
+                border-right-color: var(--primary-green);
+                border-bottom-color: transparent;
+            }
+            
+            .efficiency-table {
+                font-size: 0.7rem;
+            }
+            
+            .efficiency-table th, .efficiency-table td {
+                padding: 0.3rem;
+            }
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-green);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-green-dark);
+        }
+        
+        .hrac-groups-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hrac-group-card {
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            color: white;
+            border: 2px solid;
+        }
+        
+        .hrac-group-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .hrac-group-card p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .hrac-group-card .usage-percent {
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 50px;
+            display: inline-block;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .data-table th {
+            background: var(--primary-green);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .data-table td {
+            padding: 0.6rem;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .mixture-combination {
+            background: #f0f7ff;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #bbdefb;
+        }
+        
+        .compatibility-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .compatibility-good {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+        }
+        
+        .compatibility-warning {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .compatibility-bad {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .mixture-instructions {
+            background: #fff8e1;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 2px solid #ffecb3;
+        }
+        
+        /* استایل‌های جدید برای سیستم تناوب پیشرفته */
+        .advanced-rotation-container {
+            margin-top: 2rem;
+        }
+        
+        .rotation-scheme {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--secondary-blue);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .rotation-scheme-header {
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .rotation-scheme-header .weed-name {
+            font-size: 1.2rem;
+        }
+        
+        .rotation-scheme-header .crop-type {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .rotation-years-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .rotation-year-card {
+            background: #f8f9fa;
+            border-radius: var(--radius-md);
+            border: 2px solid #e0e0e0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .rotation-year-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .rotation-year-card-header {
+            background: var(--primary-green);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .rotation-year-card-content {
+            padding: 1rem;
+        }
+        
+        .rotation-herbicide-card {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary-green);
+        }
+        
+        .rotation-herbicide-card.wheat-only {
+            border-left-color: var(--warning-orange);
+            background: #fff9e6;
+        }
+        
+        .rotation-herbicide-card.barley-only {
+            border-left-color: var(--secondary-blue);
+            background: #e8f4fd;
+        }
+        
+        .herbicide-compatibility {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+        }
+        
+        .compatible-wheat {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+        }
+        
+        .compatible-barley {
+            background: #bbdefb;
+            color: var(--secondary-blue);
+        }
+        
+        .compatible-both {
+            background: #e1bee7;
+            color: var(--purple);
+        }
+        
+        .rotation-note {
+            padding: 1rem;
+            background: #fff9e6;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--warning-orange);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .no-rotation-message {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .no-rotation-message i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        .weed-selection-hint {
+            background: #e3f2fd;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 2px solid #bbdefb;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .priority-1 {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+        }
+        
+        .priority-2 {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .priority-3 {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+        
+        .priority-4 {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .priority-5 {
+            background: #e0f2f1;
+            color: #00695c;
+        }
+        
+        .score-indicator {
+            display: inline-block;
+            width: 60px;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        
+        .score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+        }
+        
+        .weed-category-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .category-broadleaf {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .category-narrowleaf {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .advanced-filter {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid #e0e0e0;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .optimization-result {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--primary-green);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .optimization-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: var(--radius-md);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-bottom: 0.3rem;
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* ==================== استایل‌های مخصوص موبایل ==================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 8px !important;
+                background: #f5f7fa !important;
+            }
+        
+            .container {
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                border-radius: 12px !important;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+                overflow-x: hidden !important;
+            }
+            
+            .header {
+                padding: 1.2rem !important;
+            }
+            
+            .header h1 {
+                font-size: 1.4rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            .header .subtitle {
+                font-size: 0.95rem !important;
+            }
+            
+            .app-container {
+                flex-direction: column !important;
+                min-height: auto !important;
+            }
+            
+            .sidebar {
+                width: 100% !important;
+                padding: 1rem !important;
+                border-left: none !important;
+                border-bottom: 3px solid var(--primary-green) !important;
+                max-height: 70vh !important;
+                overflow-y: auto !important;
+            }
+            
+            .main-content {
+                padding: 1rem !important;
+            }
+            
+            .checkbox-grid {
+                grid-template-columns: 1fr !important;
+                max-height: 300px !important;
+            }
+            
+            .checkbox-item {
+                padding: 12px 10px !important;
+                margin: 3px 0 !important;
+            }
+            
+            .checkbox-item label {
+                font-size: 0.92rem !important;
+            }
+            
+            .btn {
+                padding: 16px !important;
+                font-size: 1.05rem !important;
+                margin: 8px 0 !important;
+            }
+            
+            .tab-container {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                padding-bottom: 5px !important;
+            }
+            
+            .tab {
+                padding: 12px 16px !important;
+                font-size: 0.9rem !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+            }
+            
+            select, input[type="text"], input[type="number"] {
+                font-size: 16px !important;
+                padding: 14px 12px !important;
+                min-height: 52px !important;
+            }
+            
+            .result-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .result-card {
+                margin-bottom: 1rem !important;
+            }
+            
+            .herbicide-item {
+                padding: 1rem !important;
+                margin-bottom: 0.8rem !important;
+            }
+            
+            .efficiency-table {
+                font-size: 12px !important;
+                display: block !important;
+                overflow-x: auto !important;
+            }
+            
+            .efficiency-table th,
+            .efficiency-table td {
+                padding: 8px 6px !important;
+                min-width: 60px !important;
+            }
+            
+            .rotation-years-container {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* بهبود لمسی برای دکمه‌ها */
+            button, .btn, .tab, .checkbox-item, select {
+                cursor: pointer !important;
+                -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+            }
+            
+            /* بزرگ‌تر کردن ناحیه کلیک برای چک‌باکس‌ها */
+            .checkbox-item input[type="checkbox"] {
+                width: 22px !important;
+                height: 22px !important;
+                margin-left: 10px !important;
+            }
+        }
+        
+        /* بهبود برای صفحات کوچک‌تر (موبایل‌های قدیمی) */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.2rem !important;
+            }
+            
+            .tab {
+                padding: 10px 12px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .btn {
+                padding: 14px !important;
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* جلوگیری از zoom در iOS */
+        @media screen and (max-width: 768px) {
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* بهبود اسکرول روی موبایل */
+        .checkbox-grid, .efficiency-details, .section-content {
+            -webkit-overflow-scrolling: touch !important;
+        }
+        
+        /* بهینه‌سازی برای لمسی */
+        @media (hover: none) and (pointer: coarse) {
+            .btn:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+            
+            .checkbox-item:hover {
+                background: white !important;
+                border-color: #e0e0e0 !important;
+            }
+            
+            .checkbox-item:active {
+                background: var(--primary-green-25) !important;
+                border-color: var(--primary-green) !important;
+            }
+            
+            .btn:active {
+                background: linear-gradient(135deg, var(--primary-green-dark), #0d4720) !important;
+                transform: scale(0.98) !important;
+            }
+        }
+        
+        /* استایل‌های جدید برای سیستم انتخاب علف هرز خاص */
+        .weed-category-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: var(--radius-sm);
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-filter-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+        
+        .weed-details-panel {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--secondary-blue);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+        }
+        
+        .weed-details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .weed-effective-herbicides {
+            margin-top: 1rem;
+        }
+        
+        .effective-herbicide-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #f8f9fa;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--primary-green);
+        }
+        
+        .herbicide-efficiency-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        
+        .efficiency-excellent-badge {
+            background: #c8e6c9;
+            color: var(--primary-green-dark);
+        }
+        
+        .efficiency-good-badge {
+            background: #fff9c4;
+            color: #f57c00;
+        }
+        
+        .efficiency-poor-badge {
+            background: #ffccbc;
+            color: #d84315;
+        }
+        
+        .weed-selection-summary {
+            background: #e3f2fd;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 2px solid #bbdefb;
+        }
+        
+        .selected-weed-item {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+        
+        .selected-weed-item .remove-btn {
+            margin-right: 0.5rem;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .rotation-history-panel {
+            background: #fff9e6;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 2px solid #ffecb3;
+        }
+        
+        .history-item {
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--warning-orange);
+        }
+    
+/* ====== Efficiency Details (Cards) ====== */
+.eff-sortbar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.eff-cards{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:1rem}
+@media(min-width:900px){.eff-cards{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.herbicide-detail-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,.05)}
+.herbicide-detail-header{padding:1rem;border-bottom:1px solid #eef2f7}
+.herbicide-title{font-size:1.1rem;font-weight:800;margin-bottom:.5rem}
+.herbicide-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.badge{display:inline-block;padding:.25rem .5rem;border-radius:999px;font-size:.8rem;border:1px solid #e5e7eb;background:#f8fafc}
+.badge-hrac{font-weight:700}
+.herbicide-detail-body{padding:1rem}
+.herbicide-detail-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:.5rem}
+@media(min-width:700px){.herbicide-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.herbicide-notes{margin-top:.75rem;padding:.75rem;border:1px dashed #d1d5db;border-radius:12px;background:#fcfcfd}
+.weed-eff-list{margin-top:1rem;border:1px solid #eef2f7;border-radius:12px;overflow:hidden}
+.weed-eff-head,.weed-eff-row{display:grid;grid-template-columns:1.4fr .4fr 1fr;gap:.5rem;align-items:center;padding:.6rem .8rem}
+.weed-eff-head{background:#f8fafc;font-weight:700}
+.weed-eff-row{border-top:1px solid #eef2f7}
+.weed-eff-badge{display:inline-flex;justify-content:center;align-items:center;border-radius:10px;padding:.15rem .35rem;border:1px solid rgba(0,0,0,.08);font-weight:800}
+.herbicide-summary{margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:.95rem}
+.eff-legend{margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.legend-box{display:inline-block;width:18px;height:12px;border-radius:4px;border:1px solid rgba(0,0,0,.15);margin-left:.4rem}
+
+
+/* ==================== جلوه مدرن برای تب جزئیات کارایی (نسخه v6) ==================== */
+.eff-sortbar{display:flex;gap:.75rem;align-items:center;justify-content:flex-start;flex-wrap:wrap;margin:0 0 1rem 0}
+.eff-cards{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+.herbicide-detail-card{grid-column:span 12;background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.06);overflow:hidden;transition:transform .2s ease, box-shadow .2s ease}
+.herbicide-detail-card:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.10)}
+.herbicide-detail-header{display:flex;flex-direction:column;gap:.5rem;padding:1rem 1rem .75rem 1rem;background:linear-gradient(135deg, rgba(63,81,181,.10), rgba(76,175,80,.10))}
+.herbicide-detail-header-top{display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap}
+.herbicide-title{font-size:1.05rem;font-weight:800;color:#1f2937}
+.herbicide-toggle{appearance:none;border:1px solid rgba(0,0,0,.10);background:#fff;border-radius:999px;padding:.35rem .75rem;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .2s ease}
+.herbicide-toggle:hover{background:rgba(255,255,255,.75)}
+.herbicide-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;border-radius:999px;font-size:.82rem;font-weight:700;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.65)}
+.badge-hrac{background:rgba(255,152,0,.15)}
+.badge-family{background:rgba(33,150,243,.15)}
+.badge-scope{background:rgba(156,39,176,.12)}
+.herbicide-detail-body{padding:1rem;display:none}
+.herbicide-detail-body.is-open{display:block;animation:fadeIn .18s ease}
+@keyframes fadeIn{from{opacity:.0;transform:translateY(-2px)}to{opacity:1;transform:none}}
+.herbicide-summary-strip{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:.75rem}
+.eff-progress{flex:1;min-width:220px;height:10px;background:rgba(0,0,0,.06);border-radius:999px;overflow:hidden}
+.eff-progress>div{height:100%;background:linear-gradient(90deg,#4caf50,#2196f3);border-radius:999px;transition:width .3s ease}
+.herbicide-kpis{display:flex;gap:.75rem;flex-wrap:wrap}
+.kpi{background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:.5rem .75rem;min-width:120px}
+.kpi .kpi-label{font-size:.8rem;color:#6b7280;font-weight:700}
+.kpi .kpi-value{font-size:1rem;color:#111827;font-weight:900}
+.weed-eff-list{border:1px solid rgba(0,0,0,.06);border-radius:14px;overflow:hidden;margin-top:1rem}
+.weed-eff-head{display:grid;grid-template-columns:2.2fr .8fr 1fr;background:rgba(0,0,0,.03);padding:.6rem .75rem;font-weight:800;color:#374151}
+.weed-eff-row{display:grid;grid-template-columns:2.2fr .8fr 1fr;padding:.55rem .75rem;align-items:center;border-top:1px solid rgba(0,0,0,.06)}
+.weed-eff-badge{display:inline-flex;align-items:center;justify-content:center;width:44px;height:28px;border-radius:10px;font-weight:900}
+@media (min-width:900px){ .herbicide-detail-card{grid-column:span 6} }
+@media (max-width:520px){ .weed-eff-head,.weed-eff-row{grid-template-columns:1.6fr .7fr 1fr} }
+
+
+
+/* ==================== ارتقای جلوه بصری تب جزئیات کارایی (v8) ==================== */
+.herbicide-detail-card{
+    border-radius:18px;
+    border:1px solid rgba(15,23,42,.10);
+    box-shadow: 0 10px 30px rgba(2,6,23,.06);
+    background: radial-gradient(1200px 400px at 0% 0%, rgba(59,130,246,.08), transparent 55%),
+                radial-gradient(900px 380px at 100% 0%, rgba(34,197,94,.08), transparent 55%),
+                #ffffff;
+}
+.herbicide-detail-header{
+    padding: 1.05rem 1.05rem .95rem 1.05rem;
+    border-bottom: 1px solid rgba(15,23,42,.08);
+    background: linear-gradient(135deg, rgba(255,255,255,.75), rgba(248,250,252,.85));
+    backdrop-filter: blur(6px);
+}
+.herbicide-title{
+    display:flex;
+    align-items:center;
+    gap:.55rem;
+    font-size:1.08rem;
+    font-weight:900;
+    letter-spacing:-.2px;
+}
+.herbicide-title-icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:34px;
+    height:34px;
+    border-radius:12px;
+    background: rgba(15,23,42,.06);
+    border: 1px solid rgba(15,23,42,.08);
+    color:#0f172a;
+}
+.herbicide-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    border-radius: 999px;
+    padding: .45rem .8rem;
+    border:1px solid rgba(15,23,42,.12);
+    background: rgba(255,255,255,.75);
+    box-shadow: 0 6px 14px rgba(2,6,23,.06);
+    font-weight:800;
+    cursor:pointer;
+}
+.herbicide-toggle:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59,130,246,.20), 0 10px 18px rgba(2,6,23,.08);
+}
+.herbicide-toggle .toggle-icon{
+    display:inline-block;
+    transition: transform .18s ease;
+    font-weight:900;
+}
+.herbicide-detail-card.is-open .herbicide-toggle .toggle-icon{
+    transform: rotate(180deg);
+}
+.herbicide-meta .badge{
+    border-radius: 999px;
+    padding: .26rem .65rem;
+    border: 1px solid rgba(15,23,42,.10);
+    background: rgba(255,255,255,.72);
+    font-weight:800;
+}
+.herbicide-summary-strip{
+    margin-top:.85rem;
+    gap:.9rem;
+}
+.eff-progress{
+    height: 12px;
+    background: rgba(2,6,23,.06);
+    border-radius: 999px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+}
+.eff-progress>div{
+    height:100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(34,197,94,.95), rgba(59,130,246,.95));
+}
+.herbicide-kpis{
+    display:flex;
+    gap:.55rem;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+.kpi{
+    min-width: 86px;
+    padding: .55rem .65rem;
+    border-radius: 14px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(15,23,42,.10);
+}
+.kpi-label{
+    font-size: .72rem;
+    opacity: .75;
+    font-weight:800;
+    margin-bottom:.1rem;
+}
+.kpi-value{
+    font-size: 1.02rem;
+    font-weight: 950;
+}
+.herbicide-detail-body{
+    display:block; /* will be animated via max-height */
+    padding: 0 1.05rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-4px);
+    transition: max-height .26s ease, opacity .20s ease, transform .20s ease;
+}
+.herbicide-detail-body.is-open{
+    padding: 1.05rem;
+    max-height: 2400px;
+    opacity: 1;
+    transform: translateY(0);
+}
+.detail-body-shell{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media(min-width: 900px){
+    .detail-body-shell{ grid-template-columns: 1fr 1.2fr; }
+}
+.detail-col{
+    border: 1px solid rgba(15,23,42,.08);
+    border-radius: 16px;
+    background: rgba(248,250,252,.65);
+    padding: 1rem;
+}
+.detail-section-title{
+    font-weight: 950;
+    font-size: .98rem;
+    margin-bottom: .75rem;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+.herbicide-detail-grid{
+    gap: .65rem;
+}
+.herbicide-detail-grid > div{
+    padding: .55rem .65rem;
+    border: 1px solid rgba(15,23,42,.08);
+    border-radius: 12px;
+    background: rgba(255,255,255,.78);
+}
+.herbicide-notes{
+    margin-top:.85rem;
+    border-style: solid;
+    border-color: rgba(15,23,42,.10);
+    background: rgba(255,255,255,.80);
+}
+.weed-eff-list{
+    border-radius: 16px;
+    border: 1px solid rgba(15,23,42,.08);
+}
+.weed-eff-head{
+    background: rgba(15,23,42,.04);
+}
+.weed-eff-row:hover{
+    background: rgba(59,130,246,.06);
+}
+.weed-eff-badge{
+    border-radius: 999px;
+    padding: .18rem .55rem;
+    font-size: .9rem;
+}
+.eff-legend{
+    margin-top: .9rem;
+    padding: .75rem;
+    border-radius: 14px;
+    border: 1px dashed rgba(15,23,42,.18);
+    background: rgba(255,255,255,.75);
+}
+
+/* ===================== v11 Modern Efficiency Cards ===================== */
+:root{
+  --c-exc:#16a34a;
+  --c-good:#f59e0b;
+  --c-poor:#ef4444;
+  --c-none:#94a3b8;
+  --c-unk:#64748b;
+}
+.eff-sortbar-v11{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.eff-card-grid-v11{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width: 920px){.eff-card-grid-v11{grid-template-columns:1fr}}
+
+.eff-mobile-card-v11{background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,.06);overflow:hidden}
+.eff-card-top-v11{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;padding:14px 14px 10px}
+.eff-title-v11{font-weight:900;font-size:1.05rem;line-height:1.4}
+.eff-subtitle-v11{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.pill-v11{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.04);font-size:.85rem}
+.pill-scope-v11{background:rgba(33,150,243,.10)}
+
+.eff-toggle-v11{border:1px solid rgba(0,0,0,.10);background:rgba(255,255,255,.9);border-radius:12px;padding:8px 10px;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:800}
+.eff-toggle-v11 .chev-v11{transition:transform .18s ease}
+.eff-toggle-v11.open .chev-v11{transform:rotate(180deg)}
+
+.eff-kpi-row-v11{display:flex;gap:12px;align-items:center;padding:0 14px 14px}
+.donut-wrap-v11{width:110px;min-width:110px}
+.donut-v11{width:110px;height:110px;border-radius:50%;position:relative;box-shadow:inset 0 0 0 10px rgba(255,255,255,.9)}
+.donut-center-v11{position:absolute;inset:14px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.donut-big-v11{font-weight:900;font-size:1.1rem}
+.donut-small-v11{font-size:.8rem;opacity:.75}
+
+.kpi-stack-v11{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;flex:1}
+@media (max-width: 520px){.eff-kpi-row-v11{flex-direction:column;align-items:stretch}.donut-wrap-v11{margin:0 auto}.kpi-stack-v11{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi-box-v11{background:rgba(0,0,0,.03);border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:10px 10px;text-align:center}
+.kpi-lbl-v11{font-size:.8rem;opacity:.75;font-weight:700}
+.kpi-val-v11{font-size:1rem;font-weight:900;margin-top:4px}
+
+.eff-detail-v11{max-height:0;opacity:0;transform:translateY(-4px);transition:max-height .24s ease,opacity .18s ease,transform .18s ease;background:rgba(0,0,0,.02);border-top:1px solid rgba(0,0,0,.06)}
+.eff-detail-v11.open{max-height:1200px;opacity:1;transform:translateY(0)}
+.eff-detail-grid-v11{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;padding:14px}
+
+.eff-detail-grid-v11{align-items:start}
+.eff-detail-panel-v11{min-width:0;overflow:visible}
+.weed-eff-row-v11{display:grid;grid-template-columns:minmax(0,1.25fr) 56px minmax(0,0.75fr);gap:8px;align-items:center;min-width:0}
+.weed-eff-name-v11,.weed-eff-level-v11{font-size:10px;opacity:.9;white-space:normal;overflow-wrap:normal;word-break:keep-all;hyphens:none;line-height:1.5;min-width:0}
+.weed-eff-name-v11{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.weed-eff-name-v11,.weed-eff-level-v11{font-size:13px;opacity:.9;overflow-wrap:break-word;word-break:normal}
+
+@media (max-width: 920px){.eff-detail-grid-v11{grid-template-columns:1fr}}
+
+.eff-detail-panel-v11{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:12px}
+.panel-title-v11{font-weight:900;margin-bottom:10px}
+.legend-v11{display:flex;flex-direction:column;gap:8px}
+.lg-it-v11{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700}
+.lg-dot-v11{width:10px;height:10px;border-radius:50%}
+.lg-exc-v11{background:var(--c-exc)} .lg-good-v11{background:var(--c-good)} .lg-poor-v11{background:var(--c-poor)} .lg-none-v11{background:var(--c-none)} .lg-unk-v11{background:var(--c-unk)}
+.lg-num-v11{opacity:.8}
+
+.meta-grid-v11{display:flex;flex-direction:column;gap:8px}
+.meta-row-v11{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed rgba(0,0,0,.08);padding-bottom:8px}
+.meta-row-v11:last-child{border-bottom:none;padding-bottom:0}
+.meta-row-v11 span{opacity:.75}
+
+.weed-list-v11{display:flex;flex-direction:column;gap:8px}
+.weed-eff-row-v11{display:grid;grid-template-columns:1fr 52px 1fr;gap:8px;align-items:center;background:rgba(0,0,0,.02);border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:10px}
+.weed-eff-name-v11{font-weight:800}
+.weed-eff-badge-v11{display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:900;padding:6px 6px}
+.weed-eff-level-v11{opacity:.85}
+.eff-legend-v11{margin-top:14px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-weight:800}
+
+/* ====== UI Refinements v13 (Typography + Modern look) ====== */
+.eff-mobile-card-v11{
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+  border: 1px solid rgba(15,23,42,.10);
+}
+.eff-card-top-v11{
+  padding: 14px 14px 10px;
+}
+.eff-card-grid-v11{
+  gap: 12px;
+}
+.eff-detail-v11{
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.eff-detail-grid-v11{
+  gap: 12px;
+}
+.eff-detail-panel-v11{
+  background: rgba(15,23,42,.03);
+  border: 1px solid rgba(15,23,42,.08);
+}
+.weed-eff-row-v11{
+  align-items: start;
+}
+.weed-eff-name-v11{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.55;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.weed-eff-level-v11{
+  font-size: 13px;
+  opacity: .9;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.kpi-lbl-v11{
+  font-size: 12px;
+  opacity: .75;
+  font-weight: 700;
+}
+.kpi-val-v11{
+  font-size: 16px;
+  font-weight: 900;
+}
+.eff-chip-v11{
+  border: 1px solid rgba(15,23,42,.10);
+}
+
+
+/* ===================== v13 Special Rotations Family Grouping ===================== */
+.specfam-v13{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(0,0,0,.10)}
+.specfam-h-v13{
+  display:flex;align-items:center;justify-content:space-between;
+  font-weight:900;font-size:.95rem;line-height:1.3;
+  padding:8px 10px;border-radius:12px;
+  background:linear-gradient(135deg, rgba(37,99,235,.10), rgba(16,185,129,.08));
+  border:1px solid rgba(2,6,23,.08);
+}
+.specfam-grid-v13{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:10px}
+
+/* ===================== v13 Efficiency Details UI Refresh ===================== */
+/* هدف: کارت‌های شبیه اپ موبایل، خواناتر، کم‌خستگی چشم، و مدرن‌تر */
+.eff-mobile-card-v11{
+  border:1px solid rgba(2,6,23,.08);
+  box-shadow:0 14px 40px rgba(2,6,23,.08);
+}
+.eff-card-top-v11{padding:14px 14px 8px}
+.eff-title-v11{font-size:.98rem;line-height:1.55;letter-spacing:normal}
+.pill-v11{font-size:.8rem;padding:6px 10px;background:rgba(2,6,23,.035);border:1px solid rgba(2,6,23,.06)}
+.pill-scope-v11{background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.18)}
+.eff-toggle-v11{font-size:.9rem;border-radius:14px}
+.kpi-box-v11{
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,250,252,.92));
+  border:1px solid rgba(2,6,23,.07);
+}
+.kpi-lbl-v11{font-size:.78rem;opacity:.82}
+.kpi-val-v11{font-size:.98rem}
+.eff-detail-v11{
+  background:linear-gradient(180deg, rgba(248,250,252,.90), rgba(255,255,255,.95));
+}
+.eff-detail-grid-v11{gap:12px}
+.eff-detail-panel-v11{
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(2,6,23,.07);
+  border-radius:16px;
+}
+.weed-eff-row-v11{
+  padding:10px 10px;
+  border-radius:12px;
+  border:1px solid rgba(2,6,23,.06);
+  background:rgba(2,6,23,.02);
+}
+.weed-eff-row-v11:hover{background:rgba(59,130,246,.06)}
+.weed-eff-name-v11,.weed-eff-level-v11{font-size:.9rem;line-height:1.7}
+
+
+/* ===================== v15 UI fixes ===================== */
+/* Efficiency tab: reduce font sizes, modernize palette, prevent Persian letter splitting */
+:root{
+  --eff15-bg1: rgba(99,102,241,.10);
+  --eff15-bg2: rgba(16,185,129,.10);
+  --eff15-card: #ffffff;
+  --eff15-text: #0f172a;
+  --eff15-muted: rgba(15,23,42,.65);
+  --eff15-border: rgba(2,6,23,.10);
+  --eff15-shadow: 0 14px 44px rgba(2,6,23,.10);
+}
+
+/* Tight, mobile-like typography */
+#efficiency-details-container, #efficiency-details-container *{
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-kerning: normal;
+}
+
+/* جلوگیری از تکه‌تکه شدن کلمات فارسی */
+#efficiency-details-container .eff-title-v11,
+#efficiency-details-container .pill-v11,
+#efficiency-details-container .kpi-title-v11,
+#efficiency-details-container .kpi-val-v11,
+#efficiency-details-container .eff-detail-panel-v11,
+#efficiency-details-container .weed-eff-name-v11,
+#efficiency-details-container .weed-eff-level-v11{
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+#efficiency-details-container .eff-mobile-card-v11{
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%) !important;
+  border: 1px solid var(--eff15-border) !important;
+  box-shadow: var(--eff15-shadow) !important;
+  border-radius: 18px !important;
+}
+
+#efficiency-details-container .eff-card-top-v11{
+  padding: 12px 12px 8px !important;
+}
+
+#efficiency-details-container .eff-title-v11{
+  font-size: clamp(13px, 2.1vw, 15px) !important;
+  line-height: 1.55 !important;
+  font-weight: 900 !important;
+  color: var(--eff15-text) !important;
+}
+
+#efficiency-details-container .pill-v11{
+  font-size: clamp(11px, 1.9vw, 12.5px) !important;
+  padding: 6px 10px !important;
+  border: 1px solid rgba(2,6,23,.08) !important;
+  background: linear-gradient(135deg, var(--eff15-bg1), var(--eff15-bg2)) !important;
+}
+
+#efficiency-details-container .eff-toggle-v11{
+  font-size: 12px !important;
+  padding: 8px 10px !important;
+  border-radius: 12px !important;
+  background: rgba(2,6,23,.03) !important;
+}
+
+#efficiency-details-container .eff-kpi-row-v11{padding: 0 12px 12px !important; gap: 10px !important;}
+#efficiency-details-container .donut-wrap-v11{width: 96px !important; min-width: 96px !important;}
+#efficiency-details-container .donut-v11{width: 96px !important; height: 96px !important; box-shadow: inset 0 0 0 9px rgba(255,255,255,.92) !important;}
+
+#efficiency-details-container .kpi-title-v11{
+  font-size: 11.5px !important;
+  color: var(--eff15-muted) !important;
+  font-weight: 700 !important;
+}
+#efficiency-details-container .kpi-val-v11{
+  font-size: 14px !important;
+  font-weight: 950 !important;
+  color: var(--eff15-text) !important;
+}
+
+#efficiency-details-container .eff-detail-panel-v11{
+  border-top: 1px solid rgba(2,6,23,.06) !important;
+  background: linear-gradient(180deg, rgba(248,250,252,1) 0%, rgba(255,255,255,1) 100%) !important;
+}
+
+#efficiency-details-container .weed-eff-head-v11{
+  background: rgba(2,6,23,.03) !important;
+  font-size: 12px !important;
+}
+#efficiency-details-container .weed-eff-row-v11{
+  font-size: 12.5px !important;
+}
+#efficiency-details-container .weed-eff-badge-v11{
+  border-radius: 10px !important;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+}
+
+/* Special rotations: restore symmetry in family grids */
+#specific-rotation-container .specfam-grid-v13{
+  align-items: stretch !important;
+  grid-auto-rows: 1fr !important;
+}
+
+#specific-rotation-container .effective-herbicide-item{
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  height: 100% !important;
+  padding: 12px 12px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(2,6,23,.10) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 22px rgba(2,6,23,.06) !important;
+  border-left: none !important;
+}
+
+#specific-rotation-container .effective-herbicide-item > div:first-child{
+  gap: 10px !important;
+}
+
+#specific-rotation-container .effective-herbicide-item strong{
+  font-size: 0.98rem !important;
+  line-height: 1.45 !important;
+}
+
+#specific-rotation-container .effective-herbicide-item p{
+  margin: 0.20rem 0 !important;
+  font-size: 0.86rem !important;
+  line-height: 1.55 !important;
+  color: rgba(15,23,42,.78) !important;
+}
+
+/* keep badge alignment consistent */
+#specific-rotation-container .herbicide-efficiency-badge{
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+
+
+/* === v18: Efficiency Details UI polish (fonts smaller, no broken words, donut text fits) === */
+/* محدود به تب جزئیات کارایی - هیچ اثری روی سایر تب‌ها ندارد */
+#efficiency-details-container{
+  --ed-bg: rgba(255,255,255,.80);
+  --ed-card: rgba(255,255,255,.94);
+  --ed-border: rgba(15,23,42,.10);
+  --ed-text: #0f172a;
+  --ed-sub: rgba(15,23,42,.72);
+  --ed-muted: rgba(15,23,42,.56);
+  --ed-shadow: 0 14px 34px rgba(2,6,23,.10);
+  --ed-shadow2: 0 7px 18px rgba(2,6,23,.08);
+  --ed-radius: 18px;
+  --ed-radius2: 14px;
+
+  --ed-exc: #16a34a; /* *** */
+  --ed-good:#f59e0b; /* **  */
+  --ed-poor:#ef4444; /* *   */
+  --ed-none:#94a3b8; /* -   */
+  --ed-unk:#64748b;  /* ?   */
+}
+
+/* تایپوگرافی: کوچک‌تر و خواناتر، بدون جدا شدن کلمات */
+#efficiency-details-container *{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+               Arial, "Noto Sans Arabic", "Noto Sans", sans-serif !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-align: right;
+  text-justify: auto;
+  white-space: normal;
+  word-break: normal !important;
+  overflow-wrap: break-word !important; /* نه anywhere تا کلمات تکه‌تکه نشوند */
+  hyphens: none !important;
+}
+
+#efficiency-details-container .eff-title-v11{
+  font-size: clamp(12px, 1.05vw, 14px) !important;
+  font-weight: 900 !important;
+  color: var(--ed-text) !important;
+}
+#efficiency-details-container .eff-subtitle-v11,
+#efficiency-details-container p,
+#efficiency-details-container li,
+#efficiency-details-container span{
+  font-size: clamp(10.5px, .95vw, 12.5px) !important;
+  line-height: 1.85 !important;
+  color: var(--ed-sub) !important;
+}
+
+/* کارت‌ها: مدرن‌تر و زنده‌تر */
+#efficiency-details-container .eff-card-v11{
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.92)) !important;
+  border: 1px solid var(--ed-border) !important;
+  border-radius: var(--ed-radius) !important;
+  box-shadow: var(--ed-shadow2) !important;
+}
+#efficiency-details-container .eff-card-v11:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--ed-shadow) !important;
+}
+
+/* دکمه جزئیات: اپ‌مانند */
+#efficiency-details-container .eff-toggle-btn-v11{
+  border-radius: 14px !important;
+  border: 1px solid var(--ed-border) !important;
+  background: radial-gradient(120% 120% at 10% 10%,
+              rgba(99,102,241,.18), rgba(14,165,233,.12), rgba(255,255,255,.95)) !important;
+  color: var(--ed-text) !important;
+  font-weight: 900 !important;
+  font-size: clamp(10.5px, .95vw, 12.5px) !important;
+  padding: 10px 12px !important;
+}
+
+/* Donut: متن درصد کوچک‌تر تا از دایره بیرون نزند */
+#efficiency-details-container .donut-center-v11{
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 2px;
+}
+#efficiency-details-container .donut-big-v11{
+  font-size: clamp(12px, 1.2vw, 14px) !important; /* کوچکتر */
+  line-height: 1.1 !important;
+  font-weight: 900 !important;
+  max-width: 100%;
+}
+#efficiency-details-container .donut-small-v11{
+  font-size: clamp(9px, .9vw, 10.5px) !important; /* خیلی کوچکتر */
+  line-height: 1.1 !important;
+  opacity: .78 !important;
+  max-width: 100%;
+}
+
+/* برچسب‌های کارایی */
+#efficiency-details-container .eff-badge-v11{
+  border-radius: 999px !important;
+  padding: 4px 8px !important;
+  border: 1px solid var(--ed-border) !important;
+  font-weight: 900 !important;
+  font-size: clamp(9.5px, .9vw, 11px) !important;
+}
+#efficiency-details-container .eff-badge-v11.excellent{ background: rgba(22,163,74,.14) !important; color: var(--ed-exc) !important; }
+#efficiency-details-container .eff-badge-v11.good{      background: rgba(245,158,11,.16) !important; color: var(--ed-good) !important; }
+#efficiency-details-container .eff-badge-v11.poor{      background: rgba(239,68,68,.14) !important; color: var(--ed-poor) !important; }
+#efficiency-details-container .eff-badge-v11.none{      background: rgba(148,163,184,.16) !important; color: var(--ed-none) !important; }
+#efficiency-details-container .eff-badge-v11.unknown{   background: rgba(100,116,139,.16) !important; color: var(--ed-unk) !important; }
+
+/* رفع شکستن متن در ردیف‌ها */
+#efficiency-details-container .weed-eff-name-v11,
+#efficiency-details-container .weed-eff-level-v11{
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+
+
+/* === v22: ONLY Efficiency Details - per-herbicide card accent colors (CSS-only) === */
+/* NOTE: This block is scoped strictly to the Efficiency Details cards. No JS/logic changes. */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,.10);
+  box-shadow: 0 10px 22px rgba(2,6,23,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.92));
+  --card-accent: 99,102,241; /* default indigo */
+}
+
+/* Rotate a calm palette across cards (order-dependent) */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+1){ --card-accent: 99,102,241; }  /* indigo */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+2){ --card-accent: 14,165,233; }  /* sky */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+3){ --card-accent: 34,197,94; }   /* green */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+4){ --card-accent: 245,158,11; }  /* amber */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+5){ --card-accent: 236,72,153; }  /* pink */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+6){ --card-accent: 168,85,247; }  /* purple */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+7){ --card-accent: 20,184,166; }  /* teal */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11:nth-child(8n+8){ --card-accent: 244,63,94; }   /* rose */
+
+/* Subtle accent ribbon */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11::before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg,
+    rgba(var(--card-accent), .90),
+    rgba(var(--card-accent), .55),
+    rgba(255,255,255, 0)
+  );
+  opacity: .80;
+  z-index: 0;
+}
+
+/* Soft glow */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11::after{
+  content:"";
+  position:absolute;
+  width: 420px;
+  height: 240px;
+  right: -160px;
+  top: -140px;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(var(--card-accent), .16),
+    rgba(var(--card-accent), .06),
+    transparent 68%
+  );
+  z-index: 0;
+  pointer-events:none;
+}
+
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11 > *{ position: relative; z-index: 1; }
+
+/* RTL-friendly accent border */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11 .eff-card-top-v11{
+  border-right: 4px solid rgba(var(--card-accent), .55);
+  padding-right: 10px;
+}
+
+/* Button with same accent */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11 .eff-toggle-btn-v11{
+  border: 1px solid rgba(var(--card-accent), .22) !important;
+  background: linear-gradient(135deg,
+    rgba(var(--card-accent), .14),
+    rgba(255,255,255, .92)
+  ) !important;
+}
+
+/* Donut: hint of accent shadow */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11 .eff-donut-v11{
+  box-shadow:
+    inset 0 0 0 1px rgba(15,23,42,.10),
+    0 14px 28px rgba(2,6,23,.10),
+    0 10px 22px rgba(var(--card-accent), .08) !important;
+}
+
+/* Divider tint */
+#efficiency-details-container .eff-card-grid-v11 > .eff-mobile-card-v11 hr{
+  border: none !important;
+  height: 1px !important;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(var(--card-accent), .14),
+    rgba(15,23,42,.10),
+    rgba(var(--card-accent), .10),
+    transparent
+  ) !important;
+}
